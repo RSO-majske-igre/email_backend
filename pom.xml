@@ -12,10 +12,9 @@
     <packaging>pom</packaging>
 
     <groupId>team.marela</groupId>
-    <artifactId>multimodule-project</artifactId>
+    <artifactId>majskeigre-mail</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>multimodule-project</name>
-    <description>Station catalog for RSO project</description>
+    <name>majskeigre-mail</name>
 
     <modules>
         <module>api</module>
