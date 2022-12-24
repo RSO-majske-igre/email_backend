@@ -39,12 +39,12 @@ public class MailSenderServices {
                 .build();
 
         try {
-            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-            simpleMailMessage.setFrom(emailSender);
-            simpleMailMessage.setSubject("Hello from Spring Boot");
-            simpleMailMessage.setTo(to);
-            simpleMailMessage.setText("This is a test email from Spring Boot.");
-            mailSender.send(simpleMailMessage);
+//            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+//            simpleMailMessage.setFrom(emailSender);
+//            simpleMailMessage.setSubject("Hello from Spring Boot");
+//            simpleMailMessage.setTo(to);
+//            simpleMailMessage.setText("This is a test email from Spring Boot.");
+//            mailSender.send(simpleMailMessage);
             log.setSuccess(true);
         } catch (Exception e) {
             log.setSuccess(false);
