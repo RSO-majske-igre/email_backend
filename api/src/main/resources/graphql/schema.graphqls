@@ -1,0 +1,20 @@
+type Query {
+    getAllTemplates: [MailTemplate]
+}
+
+type Mutation {
+    addTemplate(template: MailTemplateInput): MailTemplate
+}
+
+input MailTemplateInput {
+    templateName: String!,
+    subject: String!,
+    message: String!
+}
+
+type MailTemplate {
+    id: ID!,
+    templateName: String,
+    subject: String,
+    message: String
+}
