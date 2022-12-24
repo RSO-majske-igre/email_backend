@@ -1,12 +1,12 @@
 package team.marela.backend.database.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import team.marela.backend.database.BaseEntity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import java.util.Set;
 
 @Entity(name = "mail_template")
