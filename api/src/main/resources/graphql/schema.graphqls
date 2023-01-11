@@ -1,9 +1,28 @@
 type Query {
-    getAllTemplates: [MailTemplate]
+    getAllTemplates: [MailTemplate],
+    getTemplateById(id: ID): MailTemplate,
+    getAllLogs: [MailLog],
+    getLogById(id: ID): MailLog,
 }
 
+type MailTemplate {
+    id: ID!,
+    templateName: String,
+    subject: String,
+    message: String
+}
+
+type MailLog {
+    id: ID!,
+    email: String!,
+    success: Boolean!,
+    mailTemplate: MailTemplate
+}
+
+
 type Mutation {
-    addTemplate(template: MailTemplateInput): MailTemplate
+    addTemplate(template: MailTemplateInput): MailTemplate,
+    sendEmail(email: MailInput): MailLog
 }
 
 input MailTemplateInput {
@@ -12,9 +31,13 @@ input MailTemplateInput {
     message: String!
 }
 
-type MailTemplate {
-    id: ID!,
-    templateName: String,
-    subject: String,
-    message: String
+input MailInput {
+    templateName: String!,
+    to: String!
+    parameters: [MailInputParameter]
+}
+
+input MailInputParameter {
+    key: String!,
+    value: String!
 }

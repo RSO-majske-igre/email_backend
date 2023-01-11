@@ -2,6 +2,7 @@ package team.marela.backend.core.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import team.marela.backend.core.exceptions.DataNotFoundException;
@@ -33,15 +34,16 @@ public class MailSenderServices {
         var log = MailLogEntity.builder()
                 .mailTemplate(template)
                 .email(to)
+                .message(message)
                 .build();
 
         try {
-//            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-//            simpleMailMessage.setFrom(emailSender);
-//            simpleMailMessage.setSubject("Hello from Spring Boot");
-//            simpleMailMessage.setTo(to);
-//            simpleMailMessage.setText("This is a test email from Spring Boot.");
-//            mailSender.send(simpleMailMessage);
+            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+            simpleMailMessage.setFrom(emailSender);
+            simpleMailMessage.setSubject(template.getSubject());
+            simpleMailMessage.setTo(to);
+            simpleMailMessage.setText(message);
+            mailSender.send(simpleMailMessage);
             log.setSuccess(true);
         } catch (Exception e) {
             log.setSuccess(false);

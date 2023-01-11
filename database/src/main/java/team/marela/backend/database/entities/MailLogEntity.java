@@ -23,6 +23,8 @@ public class MailLogEntity extends BaseEntity {
     @Column(nullable = false, updatable = false)
     private Boolean success;
 
+    private String message;
+
     @ManyToOne
     @JoinColumn(name = "mail_template")
     private MailTemplateEntity mailTemplate;
