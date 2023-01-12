@@ -1,6 +1,6 @@
 # Email Backend
 
-Payments backend microservice stores data about all payments and creates payment requests in external source (Stripe).
+Payments backend microservice is used to send emails.
 
 ## Production version
 
